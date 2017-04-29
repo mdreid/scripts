@@ -54,6 +54,8 @@ function fzip {
 export rm_branches="git branch --merged | grep -v master | xargs -n 1 git branch -d"
 export pp_dir="/afs/cs.wisc.edu/u/r/e/reid-jr/runtime-EclipseApplication/.metadata/.plugins/org.eclipse.core.resources/.projects/"
 
+set -o vi
+
 # http://askubuntu.com/questions/137875/tell-a-process-pid-by-its-window
 # export click_pid="xprop _NET_WM_PID | sed 's/_NET_WM_PID(CARDINAL) = //' | ps `cat`"
 
