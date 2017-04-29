@@ -1,0 +1,9 @@
+[alias]
+    compact = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+    full = log --decorate --all --oneline --graph
+	last = log -1 HEAD
+	whatadded = log --diff-filter=A
+[credential]
+	helper = cache
+[user]
+	email = reid-jr@cs.wisc.edu

@@ -1,0 +1,62 @@
+#
+# default .bashrc.local for computer sciences users
+# 
+# $Id: .bashrc.local,v 1.3 2013/07/16 14:58:44 pdickey Exp $
+#
+
+# Local modifications to a user's bash configuration
+#
+# For example, to set a default printer, one could uncomment the following
+# and change the printer name appropriately
+# 
+# export PRINTER=<PRINTER>
+
+# Adding an additional directory to the search path; the example below 
+# will add <NEWPATH> to the end of your search path. You can look in .bashrc
+# for additional examples.
+# 
+# export PATH=$PATH:<NEWPATH>
+
+# https://unix.stackexchange.com/a/113768
+#if command -v tmux>/dev/null; then
+#    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
+
+export PATH="$HOME/scripts:"$PATH
+
+export swamp="ssh reid-jr@swamp03.swamp.cs.wisc.edu"
+
+#important locations
+export swphome="/p/swamp/home/reid-jr/"
+export eclipsev2="/p/swamp/gits/eclipse-plugin-v2/swamp-eclipse-plugin/eclipseplugin/"
+export swpgits="/p/swamp/gits/"
+export pluginDir="/p/swamp/gits/runtime-EclipseApplication/.metadata/.plugins/org.eclipse.core.resources/.projects/"
+#export testdir="/u/c/s/cs537-1/tests"
+#export handindir="/u/c/s/cs537-3/handin/reid-jr"
+#export cs740="ssh -i $HOME/.ssh/cloudlab.pem -p 32570 zarcen@pc602.emulab.net"
+#export cs740_snmp="ssh -i $HOME/.ssh/cloudlab.pem -p 22 zarcen@pcvm602-23.emulab.net"
+# maven shorthand aliases
+export skipTests="-DskipTests -Dmaven.test.skip=true"
+export skipGPG="-Dgpg.skip"
+
+# ubuntu-14.04 VM
+export ubuntu14_key="$HOME/.ssh/fuzz.pem"
+export ubuntu14_host="ubuntu@54.213.149.84"
+# ubuntu-16.04 VM
+export ubuntu16_key="$HOME/.ssh/osproject.pem"
+export ubuntu16_host="ubuntu@34.209.76.215"
+export fuzz="/p/mist/fuzz/"
+
+function fzip {
+    zip -r $1 $1
+}
+
+export rm_branches="git branch --merged | grep -v master | xargs -n 1 git branch -d"
+export pp_dir="/afs/cs.wisc.edu/u/r/e/reid-jr/runtime-EclipseApplication/.metadata/.plugins/org.eclipse.core.resources/.projects/"
+
+# http://askubuntu.com/questions/137875/tell-a-process-pid-by-its-window
+# export click_pid="xprop _NET_WM_PID | sed 's/_NET_WM_PID(CARDINAL) = //' | ps `cat`"
+
+# don't forget about sponge
+
+# !!:gs/search/replace/ to do a search and replace on the previous command
