@@ -56,6 +56,8 @@ export pp_dir="/afs/cs.wisc.edu/u/r/e/reid-jr/runtime-EclipseApplication/.metada
 
 set -o vi
 
+shopt -s cdable_vars
+
 # http://stackoverflow.com/questions/68372/what-is-your-single-most-favorite-command-line-trick-using-bash
 
 # http://askubuntu.com/questions/137875/tell-a-process-pid-by-its-window
@@ -64,3 +66,16 @@ set -o vi
 # don't forget about sponge
 
 # !!:gs/search/replace/ to do a search and replace on the previous command
+export ML="/afs/cs.wisc.edu/u/r/e/reid-jr/private/MSCS/760/MLImplementationProject/"
+export scripts="/afs/cs.wisc.edu/u/r/e/reid-jr/scripts/"
+
+# find file
+alias ff="find . -name"
+
+# tree ls (thanks Colin!)
+alias tls="tree -L 1 -phCF"
+
+# mkcd
+function mkcd () {
+    mkdir -p "$1" && cd "$1" && pwd
+}
