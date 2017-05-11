@@ -79,3 +79,9 @@ alias tls="tree -L 1 -phCF"
 function mkcd () {
     mkdir -p "$1" && cd "$1" && pwd
 }
+
+alias cp="cp -r"
+
+function cpcd () {
+    cp -r "$1" "$2" && cd "$2"
+}
